@@ -30,6 +30,28 @@ from django.utils.translation import get_language
 
 cc_delim_re = re.compile(r'\s*,\s*')
 
+"""@author Nick.Na
+
+    服务器可以在响应中使用的标准 Cache-Control 指令
+        Cache-control: must-revalidate
+        Cache-control: no-cache
+        Cache-control: no-store
+        Cache-control: no-transform
+        Cache-control: public
+        Cache-control: private
+        Cache-control: proxy-revalidate
+        Cache-Control: max-age=<seconds>
+        Cache-control: s-maxage=<seconds>
+
+    用法示例：
+
+        response Cache-Control: s-maxage=300, public, max-age=100
+
+        patch_cache_control(response, no_cache=True, no_store=True, must_revalidate=True, max_age=100)
+    
+        將kwargs中的key，value追加到response的Cache-Control中
+
+"""
 def patch_cache_control(response, **kwargs):
     """
     This function patches the Cache-Control header by adding all
@@ -55,6 +77,15 @@ def patch_cache_control(response, **kwargs):
         else:
             return t[0] + '=' + smart_str(t[1])
 
+    """@Nick.Na
+
+        将response中的Cache-Control转为dict
+        示例：
+            's-maxage=300, public, max-age=0'
+            => ['s-maxage=300', 'public', 'max-age=0']
+            => {'max-age': '0', 'public': True, 's-maxage': '300'}
+
+    """
     if response.has_header('Cache-Control'):
         cc = cc_delim_re.split(response['Cache-Control'])
         cc = dict([dictitem(el) for el in cc])
@@ -73,11 +104,20 @@ def patch_cache_control(response, **kwargs):
     elif 'public' in cc and 'private' in kwargs:
         del cc['public']
 
+    """@author: Nick.Na
+
+        將kwargs中的`_`替換成`-`,拼接出新的`Cache-Control`字符串
+    """
+
     for (k, v) in kwargs.items():
         cc[k.replace('_', '-')] = v
     cc = ', '.join([dictvalue(el) for el in cc.items()])
     response['Cache-Control'] = cc
 
+"""@author: Nick.Na
+
+    解析response中的'Cache-Control'并返回`max-age`整數數值或者None
+"""
 def get_max_age(response):
     """
     Returns the max-age from the response Cache-Control header as an integer
@@ -93,10 +133,30 @@ def get_max_age(response):
         except (ValueError, TypeError):
             pass
 
+"""@author: Nick.Na
+
+    ETag: 
+        第一次发起HTTP请求时
+            服务器会返回一个Etag到客戶端
+            ETag由服务器生成
+        第二次发起同一个请求时，客户端会同时发送一个If-None-Match
+            If-None-Match 它的值就是Etag的值（此处由发起请求的客户端来设置）
+
+        服务器会比对这个客服端发送过来的Etag是否与服务器的相同
+
+            如果相同，就将If-None-Match的值设为false，返回状态为304，客户端继续使用本地缓存
+            不解析服务器返回的数据（这种场景服务器也不返回数据，因为服务器的数据没有变化）
+    
+    Etag的优先级高于Last-Modified
+"""
 def _set_response_etag(response):
     response['ETag'] = '"%s"' % hashlib.md5(response.content).hexdigest()
     return response
 
+"""@author Nick.Na
+
+    为response header中ETag, Last-Modified, Expires设置默认值
+"""
 def patch_response_headers(response, cache_timeout=None):
     """
     Adds some useful headers to the given HttpResponse object:
