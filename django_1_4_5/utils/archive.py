@@ -21,6 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
+
+"""@author: Nick.Na
+    python-archive python解压文件
+    用法示例：
+        from archive import Archive
+
+        a = Archive('files.tar.gz')
+        a.extract()
+
+    __future__模块，把下一个新版本的特性导入到当前版本
+
+    with是从2.5版本引入的一个语法. 这个语法本身是为了解决try..finally繁琐的释放各类资源(文件句柄, Lock等)的问题.
+    如果想在旧版本中使用这个功能, 直接引入future模块就可以.
+
+"""
+
 from __future__ import with_statement
 import os
 import shutil
@@ -48,7 +64,12 @@ def extract(path, to_path=''):
     """
     Archive(path).extract(to_path)
 
+"""@author: Nick.Na
 
+    Archive的实现：
+        - 获取文件后缀名
+        - 根据后缀名动态确定对应的处理类，类似与反射机制
+"""
 class Archive(object):
     """
     The external API class that encapsulates an archive implementation.
