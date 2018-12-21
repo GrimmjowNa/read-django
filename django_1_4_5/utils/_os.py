@@ -16,38 +16,6 @@ except NameError:
 # Windows version of abspath handles this correctly.  The Windows
 # abspath also handles drive letters differently than the pure
 # Python implementation, so it's best not to replace it.
-""" @author: Nick.Na
-
-    os.name:
-        - 'posix': linux
-        - 'nt': windows
-        - 'java' java虚拟机
-
-    理解normpath: 清除多余的分隔符或者相对路径部分
-
-    例子:
-    os.getcwdu() # 执行路径
-    # 结果  u'/home/nick/read-django'
-
-    path = join(os.getcwdu(), 'a')
-    # 结果  u'/home/nick/read-django/a'
-
-    path = join(os.getcwdu(), '../a')
-    # 结果  u'/home/nick/read-django/../a'
-
-    os.path.isdir(path)
-    # 创建'/home/nick/a'文件夹后返回 True
-    # u'/home/nick/read-django/../a' 是一个合法路径
-
-    normpath(path)
-    # 结果  u'/home/nick/a'
-
-    normpath('/home///nick')
-    # 结果  u'/home/nick'
-
-    normpath('/home/nick/Djangó')
-    # 结果  '/home/nick/Djang\xc3\xb3'
-"""
 if os.name == 'nt':
     abspathu = abspath
 else:
@@ -61,16 +29,6 @@ else:
             path = join(os.getcwdu(), path)
         return normpath(path)
 
-""" @author: Nick.Na
-
-    理解函数不确定的参数
-    理解解包
-
-    传入一个或多个路径名, 返回一个绝对路径, 生成的路径必须在base路径下
-    如果执行 safe_join('static', '../js')
-    将会抛出 ValueError
-
-"""
 def safe_join(base, *paths):
     """
     Joins one or more path components to the base path component intelligently.
@@ -94,58 +52,7 @@ def safe_join(base, *paths):
                          'path component (%s)' % (final_path, base_path))
     return final_path
 
-""" @author: Nick.Na
 
-    了解 shutil-- High-level file operations 是一种高层次的文件操作工具
-        类似于高级API，而且主要强大之处在于其对文件的复制与删除操作更是比较支持好。
-
-    shutil.rmtree(path[, ignore_errors[, onerror]]) 递归的去删除文件
-     - ignore_errors
-       - True: 删除中过程的错误将会被忽略
-       - False: 通过指定onerror处理错误信息， 没有指定onerror则抛出异常
-     - onerror 带三个参数(func, path, exc_info)
-       - func: os.listdir, os.remove, or os.rmdir;
-       - path: 导致出错的路径
-       - exc_info: sys.exc_info()返回的元组
-
-     理解 sys.exc_info()
-     例子:
-         try:
-             1/0
-         except:
-             print sys.exc_info()
-
-    结果： (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), <traceback object at 0x7fbea84d1e60>)
-        - type (异常类别)value
-        - (异常说明，可带参数)
-        -  traceback (traceback对象，包含更丰富的信息)
-
-
-    理解 os.stat() 系统调用时用来返回相关文件的系统状态信息的。
-    os.stat("/home/nick")
-    结果： posix.stat_result(
-            st_mode=16877,  # 权限模式
-            st_ino=4849666, # inode number
-            st_dev=2055,    # device
-            st_nlink=73,    # number of hard links
-            st_uid=1000,    # 所有用户的user id
-            st_gid=1000,    # 所有用户的group id
-            st_size=4096,   # 文件的大小，以位为单位
-            st_atime=1545364911, #文件最后访问时间
-            st_mtime=1545358537, #文件最后修改时间
-            st_ctime=1545358537  #文件创建时间
-         )
-
-     这里的 rmtree_errorhandler 就是为onerror指定的值
-     用法 shutil.rmtree(path_to_remove, onerror=rmtree_errorhandler)
-
-     如果不是 WindowsError 或者 'Access is denied'不在异常信息中， 抛出异常
-
-     os.chmod(path, stat.S_IREAD) 修改文件权限
-      - stat.S_IREAD: windows下设为只读
-      - stat.S_IWRITE: windows下取消只读
-
-"""
 def rmtree_errorhandler(func, path, exc_info):
     """
     On Windows, some files are read-only (e.g. in in .svn dirs), so when
