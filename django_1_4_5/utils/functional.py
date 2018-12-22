@@ -2,7 +2,42 @@ import copy
 import operator
 from functools import wraps, update_wrapper
 
+"""@author: Nick.Na
 
+    functools，用于高阶函数：指那些作用于函数或者返回其它函数的函数，
+        通常只要是可以被当做函数调用的对象就是这个模块的目标。
+
+        partial(func, *args, **keywords)，函数装饰器，返回一个新的partial对象。
+        调用partial对象和调用被修饰的函数func相同，只不过调用partial对象时传入的参数个数通常要少于调用func时传入的参数个数。
+
+        update_wrapper这个函数的主要功能是负责copy原函数的一些属性，
+           默认是：'__module__', '__name__', '__doc__'， '__dict__'，
+           如果不加update_wrapper,那么被装饰器修饰的函数就会丢失其上面的一些属性信息
+
+        update_wrapper是wraps的主要功能提供者, wraps则是update_wrap的partial
+        wraps可用作一个装饰器，简化调用update_wrapper的过程
+
+        所以＠wraps的等价形式如下：
+            wrapper = partial(update_wrapper, wrapped=func, assigned=assigned, updated=updated)(wrapper)
+        进一步等价：
+            wrapper = update_wrapper(wrapper=wrapper, wrapped=func, assigned=assigned, updated=updated)
+"""
+
+"""@ author Nick.Na
+
+    理解 functools.partial的用法
+
+    curry功能和functools.partial一样，只不过parital返回partial对象，而curry返回函数
+    第一个参数是一个函数对象，需要传入的是一个函数，后面要传入的是不定长的tuple和不定长的dict。
+
+    示例:
+        def add(a, b, c):
+            return a + b + c
+        add2 = curry(add, c = 1)
+
+        add(3, 2, 1)
+        add2(3, 2)
+"""
 # You can't trivially replace this `functools.partial` because this binds to
 # classes and returns bound instances, whereas functools.partial (on CPython)
 # is a type and its instances don't bind.
@@ -11,6 +46,10 @@ def curry(_curried_func, *args, **kwargs):
         return _curried_func(*(args+moreargs), **dict(kwargs, **morekwargs))
     return _curried
 
+"""@author
+
+    经memoize包装过的函数可以对曾经的调用在内存建立缓存，提高性能
+"""
 def memoize(func, cache, num_args):
     """
     Wrap a function so that results for any argument tuple are stored in
@@ -29,6 +68,31 @@ def memoize(func, cache, num_args):
         return result
     return wrapper
 
+"""@author: Nick.Na
+
+    cache_propery为一个装饰器类, 将具有单个自变量的方法转换为属性缓存在实例上。
+    
+    描述符:
+        描述符本质就是一个新式类,
+        在这个新式类中,至少实现了__get__(),__set__(),__delete__()中的一个,这也被称为描述符协议
+
+    init name参数，可以自己传或者直接读取被装饰的函数名 
+    get方法 执行被装饰的函数并将返回的数据保存到了实例的__dict__里面
+
+    属性的读取优先级:
+        类属性 > 数据数据描述符 >  __dict__ > 非数据描述符 > 找不到的属性触发__getattr__()
+
+    示例：
+        class Foo():
+            @cached_property
+            def a(self):
+                print('call a')
+                return 'a'
+        foo = Foo()
+
+    第一次运行foo.a：　调用__get__方法并将返回的数据保存在实例foo的__dict__
+    再次访问foo.a时，不在运行__get__方法, foo.__dict__['a']  (__dict__ > 非数据描述符)
+"""
 class cached_property(object):
     """
     Decorator that creates converts a method with a single
