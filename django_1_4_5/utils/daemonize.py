@@ -1,6 +1,13 @@
 import os
 import sys
 
+
+"""@author Nick.Na
+
+    为runserver添加参数`--daemonize`。关闭shell窗口时，将不会kill进程
+
+    ./manage.py runserver > /dev/null 2>&1 &
+"""
 if os.name == 'posix':
     def become_daemon(our_home_dir='.', out_log='/dev/null',
                       err_log='/dev/null', umask=022):

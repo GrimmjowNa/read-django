@@ -1,6 +1,13 @@
 import copy
 from types import GeneratorType
 
+"""@author Nick.Na
+
+    MergeDict可以理解为多个dict的元组
+    m = MergeDict({'a': 1}, {'b': 2})
+    m.dicts => ({'a': 1}, {'b': 2})
+    如果一个key出现多次，则第一个key有效
+"""
 class MergeDict(object):
     """
     A simple class for creating new "virtual" dictionaries that actually look

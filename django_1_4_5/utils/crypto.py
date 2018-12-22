@@ -26,7 +26,31 @@ from django.conf import settings
 _trans_5c = "".join([chr(x ^ 0x5C) for x in xrange(256)])
 _trans_36 = "".join([chr(x ^ 0x36) for x in xrange(256)])
 
+"""@author: Nick.Na
 
+    理解摘要算法
+        
+        hashlib提供了常见的摘要算法，如MD5，SHA1等等。
+        摘要算法又称哈希算法、散列算法。它通过一个函数，把任意长度的数据转换为一个长度固定的数据串（通常用16进制的字符串表示）。
+        摘要算法就是通过摘要函数f()对任意长度的数据data计算出固定长度的摘要digest。
+        摘要函数是一个单向函数，计算f(data)很容易，但通过digest反推data却非常困难。
+        而且，对原始数据做一个bit的修改，都会导致计算出的摘要完全不同。
+
+        为了防止黑客通过彩虹表根据哈希值反推原始口令，在计算哈希的时候，不能仅针对原始输入计算，
+        需要增加一个salt来使得相同的输入也能得到不同的哈希，这样，大大增加了黑客破解的难度。
+
+        如果salt是我们自己随机生成的，通常我们计算MD5时采用md5(message + salt)。
+        但实际上，把salt看做一个“口令”，加salt的哈希就是：
+        计算一段message的哈希时，根据不通口令计算出不同的哈希。要验证哈希值，必须同时提供正确的口令。
+
+        Hmac算法：Keyed-Hashing for Message Authentication。
+        它通过一个标准算法，在计算哈希的过程中，把key混入计算过程中。
+
+    代码解释：
+        settings中预设secret
+        通过 sha1(key_salt + secret)作为key（salt）
+        然后对value进行加密
+"""
 def salted_hmac(key_salt, value, secret=None):
     """
     Returns the HMAC-SHA1 of 'value', using a key generated from key_salt and a
@@ -48,7 +72,10 @@ def salted_hmac(key_salt, value, secret=None):
     # However, we need to ensure that we *always* do this.
     return hmac.new(key, msg=value, digestmod=hashlib.sha1)
 
+"""@author: Nick.Na
 
+    random.seed(0)作用：使得随机数据可预测，即只要seed的值一样，后续生成的随机数都一样。
+"""
 def get_random_string(length=12,
                       allowed_chars='abcdefghijklmnopqrstuvwxyz'
                                     'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'):
