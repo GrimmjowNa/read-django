@@ -48,7 +48,7 @@ cc_delim_re = re.compile(r'\s*,\s*')
         response Cache-Control: s-maxage=300, public, max-age=100
 
         patch_cache_control(response, no_cache=True, no_store=True, must_revalidate=True, max_age=100)
-    
+
         將kwargs中的key，value追加到response的Cache-Control中
 
 """
@@ -135,7 +135,7 @@ def get_max_age(response):
 
 """@author: Nick.Na
 
-    ETag: 
+    ETag:
         第一次发起HTTP请求时
             服务器会返回一个Etag到客戶端
             ETag由服务器生成
@@ -146,7 +146,7 @@ def get_max_age(response):
 
             如果相同，就将If-None-Match的值设为false，返回状态为304，客户端继续使用本地缓存
             不解析服务器返回的数据（这种场景服务器也不返回数据，因为服务器的数据没有变化）
-    
+
     Etag的优先级高于Last-Modified
 """
 def _set_response_etag(response):
@@ -188,6 +188,24 @@ def add_never_cache_headers(response):
     """
     patch_response_headers(response, cache_timeout=-1)
 
+"""Aauthor Nick.Na
+
+    理解Vary
+
+        HTTP response HTTP 中的Vary用于内容协商。
+        Vary中有User-Agent，那么即使相同的请求，如果用户使用IE打开了一个页面，再用Firefox打开这个页面的时候，
+        代理/客户端会认为这是不同的页面，如果Vary中没有User-Agent，那么代理/客户端缓存会认为是相同的页面，
+        直接给用户返回缓存的内容，而不会再去web服务器请求相应的页面。
+        如果Vary变量比较多，相应的增加了缓存的容量。
+
+    示例：
+        Vary: Accept-Language, Cookie
+        Vary: Accept-Encoding
+
+    用法：
+        添加或者更新Response对象header中的Vary值。 参数newheaders是一个list，包含header名称。
+        Response中已有的值不会被移除。
+"""
 def patch_vary_headers(response, newheaders):
     """
     Adds (or updates) the "Vary" header in the given HttpResponse object.
@@ -207,6 +225,10 @@ def patch_vary_headers(response, newheaders):
                           if newheader.lower() not in existing_headers]
     response['Vary'] = ', '.join(vary_headers + additional_headers)
 
+"""@author Nick.Na
+
+    判断vary中是否存在给定的header值
+"""
 def has_vary_header(response, header_query):
     """
     Checks to see if the response has a given header name in its Vary header.
