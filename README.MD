@@ -2,19 +2,8 @@
 
 ## Version 1.4.5
 
-- __init__.py Django版本信息
-- utils 工具方法和类等
-- bin
-- contrib
-- db
-- forms
-- shortcuts
-- templatetags
-- conf
-- core
-- dispatch
-- http
-- middleware
-- template
-- test
-- views
+[Django API 参考](https://django-chinese-docs.readthedocs.io/en/latest/ref/index.html)
+
+## Version 2.0
+
+[Django API 参考](https://docs.djangoproject.com/en/2.0/ref/)

@@ -8,6 +8,16 @@ class classonlymethod(classmethod):
             raise AttributeError("This method is available only on the view class.")
         return super(classonlymethod, self).__get__(instance, owner)
 
+"""@author: Nick.Na
+
+    将函数装饰器转换为方法装饰器。
+
+    类的方法和独立的函数不完全相同，所以你不可以直接将函数装饰器运用到方法上 —— 你首先需要将它转换成一个方法装饰器。
+
+    参考: 
+        https://stackoverflow.com/questions/306130/python-decorator-makes-function-forget-that-it-belongs-to-a-class/
+        https://github.com/denis-ryzhkov/method_decorator/blob/master/README.md
+"""
 def method_decorator(decorator):
     """
     Converts a function decorator into a method decorator

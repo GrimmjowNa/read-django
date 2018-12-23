@@ -56,6 +56,13 @@ cc_delim_re = re.compile(r'\s*,\s*')
         patch_cache_control(response, no_cache=True, no_store=True, must_revalidate=True, max_age=100)
 
         將kwargs中的key，value追加到response的Cache-Control中
+    
+    注释:
+        此函数通过向其添加关键字参数来追加Cache-Control标头。格式转换如下：
+
+            - 所有关键字参数名称都将变为小写，下划线将转换为连字符。
+            - 如果参数的值为True（完全为True，而不仅仅是true值），则只将参数名称添加到标题中。
+            - 其它参数调用str（）之后再添加 。
 
 """
 def patch_cache_control(response, **kwargs):
@@ -122,7 +129,7 @@ def patch_cache_control(response, **kwargs):
 
 """@author: Nick.Na
 
-    解析response中的'Cache-Control'并返回`max-age`整數數值或者None
+    从响应Cache-Control标头返回max-age作为整数（如果未找到或不是整数，则返回None）
 """
 def get_max_age(response):
     """
@@ -162,6 +169,12 @@ def _set_response_etag(response):
 """@author Nick.Na
 
     为response header中ETag, Last-Modified, Expires设置默认值
+    向给定的HttpResponse对象添加一些有用的标头： 
+        - ETag
+        - Last-Modified
+        - Expires
+        - Cache-Control
+    仅在尚未设置的情况下添加每个标头。
 """
 def patch_response_headers(response, cache_timeout=None):
     """
@@ -188,6 +201,10 @@ def patch_response_headers(response, cache_timeout=None):
         response['Expires'] = http_date(time.time() + cache_timeout)
     patch_cache_control(response, max_age=cache_timeout)
 
+"""@author Nick.Na
+
+    向响应添加标头永远不应缓存页面
+"""
 def add_never_cache_headers(response):
     """
     Adds headers to a response to indicate that a page should never be cached.
@@ -282,7 +299,8 @@ def _generate_cache_header_key(key_prefix, request):
 
 """@author Nick.Na
 
-    基于request的路径和参数返回一个cache key值
+    根据请求路径返回缓存键。它可以用在请求阶段，因为它从全局路径注册表中提取要考虑的headerlist，并使用这些标头来构建要检查的缓存密钥。
+    如果没有存储headerlist，则需要重建页面，函数返回None。
 
     主要用于： Cache middleware.
         检查请求的page是否在cache中，如果在则返回cache的版本
@@ -317,6 +335,15 @@ def get_cache_key(request, key_prefix=None, method='GET', cache=None):
     else:
         return None
 
+"""@author Nick.Na
+
+    了解响应对象的某些请求路径要考虑的headers。
+    它将这些headers存储在全局路径注册表中，以便以后访问该路径将知道在不构建响应对象本身的情况下要考虑哪些headers。
+    headers在响应的Varyheaders中命名，但我们希望阻止响应生成。
+
+    用于生成缓存密钥的headers列表与页面本身存储在同一缓存中。
+    如果某些数据从缓存中失效，意味着我们必须构建响应一次以获取Vary头，在headers列表中使用cache key。
+"""
 def learn_cache_key(request, response, cache_timeout=None, key_prefix=None, cache=None):
     """
     Learns what headers to take into account for some request path from the

@@ -26,6 +26,12 @@ time_re = re.compile(
     r'(?::(?P<second>\d{1,2})(?:\.(?P<microsecond>\d{1,6})\d{0,6})?)?'
 )
 
+"""@author： Nick.Na
+
+    解析字符串并返回`datetime.date`
+    如果输入格式正确但不是有效日期或时间，则会引发ValueError。
+    如果格式不正确，则返回None。
+"""
 def parse_date(value):
     """Parses a string and return a datetime.date.
 
@@ -37,6 +43,15 @@ def parse_date(value):
         kw = dict((k, int(v)) for k, v in match.groupdict().iteritems())
         return datetime.date(**kw)
 
+"""@author: Nick.Na
+
+    解析字符串并返回`datetime.time`
+
+    不支持UTC偏移
+    
+    如果输入格式正确但不是有效日期或时间，则会引发ValueError。
+    如果格式不正确或者包含UTC偏移，则返回None。
+"""
 def parse_time(value):
     """Parses a string and return a datetime.time.
 
@@ -56,6 +71,16 @@ def parse_time(value):
         kw = dict((k, int(v)) for k, v in kw.iteritems() if v is not None)
         return datetime.time(**kw)
 
+"""@author: Nick.Na
+
+    解析字符串并返回`datetime.datetime`
+
+    支持UTC偏移, 当输入包含UTC， 输出使用`FixedOffset`的实例作为tzinfo
+    微秒可以作为输入，但是会被忽略
+
+    如果输入格式正确但不是有效日期或时间，则会引发ValueError
+    如果格式不正确，则返回None。
+"""
 def parse_datetime(value):
     """Parses a string and return a datetime.datetime.
 

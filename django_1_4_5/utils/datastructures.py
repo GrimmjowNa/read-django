@@ -103,6 +103,17 @@ class MergeDict(object):
         dictreprs = ', '.join(repr(d) for d in self.dicts)
         return '%s(%s)' % (self.__class__.__name__, dictreprs)
 
+"""@author Nick.Na
+
+    SortedDict可以保持它的key插入字典的顺序。
+    - insert方法
+        在Django 1.5中弃用。
+        在具有给定索引的项目之前插入键值对。
+
+    - value_for_index 
+        在Django 1.5中弃用。
+        返回给定的从零开始的索引处的项的值。
+"""
 class SortedDict(dict):
     """
     A dictionary that keeps its keys in the order in which they're inserted.
