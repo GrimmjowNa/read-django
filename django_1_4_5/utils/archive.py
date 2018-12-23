@@ -23,6 +23,7 @@ THE SOFTWARE.
 """
 
 """@author: Nick.Na
+
     python-archive python解压文件
     用法示例：
         from archive import Archive
@@ -34,7 +35,6 @@ THE SOFTWARE.
 
     with是从2.5版本引入的一个语法. 这个语法本身是为了解决try..finally繁琐的释放各类资源(文件句柄, Lock等)的问题.
     如果想在旧版本中使用这个功能, 直接引入future模块就可以.
-
 """
 
 from __future__ import with_statement

@@ -4,7 +4,6 @@
     - abspathu: 返回绝对路径
     - safe_join： 路径拼接
     - rmtree_errorhandler： 为 shutil.rmtree 提供的回调函数
-
 """
 
 import os

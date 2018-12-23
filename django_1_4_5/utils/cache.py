@@ -17,6 +17,12 @@ An example: i18n middleware would need to distinguish caches by the
 "Accept-language" header.
 """
 
+"""author: Nick.Na
+
+    该模块包括用于控制缓存的辅助函数。
+    它通过这样做管理response header的‘Vary’的响应报头实现缓存控制。
+    包含直接修改response header的函数和装饰器
+"""
 import hashlib
 import re
 import time
@@ -274,6 +280,22 @@ def _generate_cache_header_key(key_prefix, request):
         key_prefix, path.hexdigest())
     return _i18n_cache_key_suffix(request, cache_key)
 
+"""@author Nick.Na
+
+    基于request的路径和参数返回一个cache key值
+
+    主要用于： Cache middleware.
+        检查请求的page是否在cache中，如果在则返回cache的版本
+
+    代码解析
+        - 调用_generate_cache_header_key生成cache_key，主要依据： url, key_prefix, 语言, 时区
+        - 根据生成的cache_key获取headerlist
+        - 调用_generate_cache_key生成response对应的key 依据headerlist  method，headerlist，key_prefix，语言，时区
+    
+    一个请求会在缓存服务中缓存两个key，
+        - views.decorators.cache.cache_header 对应headerlist(结合vary_on_headers使用)
+        - views.decorators.cache.cache_page   对应response的内容。
+"""
 def get_cache_key(request, key_prefix=None, method='GET', cache=None):
     """
     Returns a cache key based on the request path and query. It can be used
