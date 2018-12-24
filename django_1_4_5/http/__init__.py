@@ -7,6 +7,43 @@ import sys
 import time
 import warnings
 
+"""@author: Nick.Na
+
+    pprint模块 提供了打印出任何Python数据结构类和方法。
+    格式化一个数据结构而不把它直接写至一个流（例如用于日志记录），可以使用pformat()来构造一个字符串表示。
+
+
+    quote
+        将url数据获取之后，并将其编码，从而适用与URL字符串中，使其能被打印和被web服务器接受。
+        示例：
+            urllib.quote('http://www.baidu.com')
+            结果： http%3A//www.baidu.com
+
+    urlencode
+        将URL中的键值对以连接符&划分
+        示例：
+            params=urllib.urlencode({'spam':1,'eggs':2,'bacon':0})
+            结果： 'eggs=2&bacon=0&spam=1'
+
+    urljoin
+        将基地址与一个相对地址形成一个绝对地址
+        示例：
+            urljoin("http://www.google.com/1/aaa.html","/2/bbbb.html")
+            结果： http://www.google.com/2/bbbb.html
+
+    urlparse
+        将url分为6个部分，返回一个包含6个字符串项目的元组：协议、位置、路径、参数、查询、片段。
+        示例：
+            url=urlparse.urlparse('http://www.baidu.com/index.php?username=guol')
+            结果： ParseResult(
+                    scheme='http',
+                    netloc='www.baidu.com',
+                    path='/index.php',
+                    params='',
+                    query='username=guol',
+                    fragment=''
+                )
+"""
 from pprint import pformat
 from urllib import urlencode, quote
 from urlparse import urljoin, urlparse
