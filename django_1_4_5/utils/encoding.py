@@ -26,6 +26,12 @@ class StrAndUnicode(object):
     def __str__(self):
         return self.__unicode__().encode('utf-8')
 
+"""@author: Nick.Na
+
+    返回一个文本对象，表示在Python 2上的s - unicode和 在Python 3上的str。
+    使用编码编解码器处理字节串。
+    如果strings_only为True，则不要转换（某些）非类似字符串的对象。
+"""
 def smart_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
     """
     Returns a unicode object representing 's'. Treats bytestrings using the
@@ -38,6 +44,10 @@ def smart_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
         return s
     return force_unicode(s, encoding, strings_only, errors)
 
+"""@author: Nick.Na
+
+    确定对象实例是否属于protected类型
+"""
 def is_protected_type(obj):
     """Determine if the object instance is of a protected type.
 
@@ -51,6 +61,11 @@ def is_protected_type(obj):
         float, Decimal)
     )
 
+"""@authore: Nick.Na
+
+    与smart_text类似，除了将延迟实例解析为字符串，而不是保持为惰性对象。
+    如果strings_only为True，则不要转换（某些）非类似字符串的对象
+"""
 def force_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
     """
     Similar to smart_unicode, except that lazy instances are resolved to
@@ -101,6 +116,11 @@ def force_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
                     errors) for arg in s])
     return s
 
+"""@author: Nick.Na
+
+    Python 2上的smart_bytes()和Python 3 上的smart_text()的别名。此函数返回str或lazy字符串。
+    例如，这适用于在Python 2和3上写入sys.stdout。
+"""
 def smart_str(s, encoding='utf-8', strings_only=False, errors='strict'):
     """
     Returns a bytestring version of 's', encoded as specified in 'encoding'.
@@ -129,6 +149,13 @@ def smart_str(s, encoding='utf-8', strings_only=False, errors='strict'):
     else:
         return s
 
+"""@author: Nick.Na
+
+    将国际化资源标识符（IRI）部分转换为适合包含在URL中的URI部分。
+
+    这是算法 RFC 3987的3.1节。但是，由于我们假设输入已经是UTF-8或unicode，我们可以从完整方法中简化一些事情。
+    返回包含编码结果的ASCII字符串。
+"""
 def iri_to_uri(iri):
     """
     Convert an Internationalized Resource Identifier (IRI) portion to a URI
@@ -156,6 +183,16 @@ def iri_to_uri(iri):
         return iri
     return urllib.quote(smart_str(iri), safe="/#%[]=:;$&()+,!?*@'~")
 
+"""@author: Nick.Na
+
+    将文件系统路径转换为适合包含在URL中的URI部分。假设路径为UTF-8或unicode。
+
+    此方法将编码通常被识别为URI的特殊字符的某些字符。
+
+    请注意，此方法不对'字符进行编码，因为它是URI中的有效字符。
+    有关更多详细信息，请参阅 encodeURIComponent（） 
+    返回包含编码结果的ASCII字符串。
+"""
 def filepath_to_uri(path):
     """Convert an file system path to a URI portion that is suitable for
     inclusion in a URL.

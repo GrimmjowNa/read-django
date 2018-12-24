@@ -49,7 +49,11 @@ def method_decorator(decorator):
     _dec.__name__ = 'method_decorator(%s)' % decorator.__name__
     return _dec
 
+"""@author: Nick.Na
 
+    与decorator_from_middleware一样，
+    但返回一个接受要传递给middleware_class的参数的函数。
+"""
 def decorator_from_middleware_with_args(middleware_class):
     """
     Like decorator_from_middleware, but returns a function
@@ -65,7 +69,11 @@ def decorator_from_middleware_with_args(middleware_class):
     """
     return make_middleware_decorator(middleware_class)
 
-
+"""@author: Nick.Na
+    给定一个中间件类，返回一个视图装饰器。
+    可以基于每个视图使用中间件功能。
+    创建中间件时没有传递参数。
+"""
 def decorator_from_middleware(middleware_class):
     """
     Given a middleware class (not an instance), returns a view decorator. This
