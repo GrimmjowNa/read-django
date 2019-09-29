@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/dbshell.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templatetags/admin_urls.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "db/backends/oracle/functions.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

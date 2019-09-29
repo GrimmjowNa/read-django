@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/createcachetable.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/spatialite/client.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

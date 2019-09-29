@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/gdal/datasource.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/databrowse/templates/databrowse/homepage.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

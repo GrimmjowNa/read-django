@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/tests/data/invalid/emptypoints.dbf",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

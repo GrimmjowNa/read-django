@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/gdal/geometries.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

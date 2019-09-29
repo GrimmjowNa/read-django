@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/geoip2/resources.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

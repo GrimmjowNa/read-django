@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlreset.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

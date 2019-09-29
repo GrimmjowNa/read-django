@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/oracle/introspection.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

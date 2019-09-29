@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/compilemessages.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

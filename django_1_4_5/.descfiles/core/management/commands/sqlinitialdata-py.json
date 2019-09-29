@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlinitialdata.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

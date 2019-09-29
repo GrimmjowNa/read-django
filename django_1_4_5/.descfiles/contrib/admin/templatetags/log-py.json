@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templatetags/log.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

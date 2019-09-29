@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/templates/registration/login.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

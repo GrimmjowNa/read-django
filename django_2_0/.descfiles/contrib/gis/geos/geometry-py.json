@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/geos/geometry.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

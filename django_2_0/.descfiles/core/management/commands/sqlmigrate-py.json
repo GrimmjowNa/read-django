@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlmigrate.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

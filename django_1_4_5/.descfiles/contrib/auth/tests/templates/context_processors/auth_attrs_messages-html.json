@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/templates/context_processors/auth_attrs_messages.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

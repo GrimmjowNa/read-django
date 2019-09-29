@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/gdal/geomtype.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

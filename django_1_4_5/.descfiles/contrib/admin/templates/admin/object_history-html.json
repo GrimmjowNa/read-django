@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/object_history.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/comments/templates/comments/approved.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

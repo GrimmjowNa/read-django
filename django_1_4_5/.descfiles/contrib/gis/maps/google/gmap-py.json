@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/maps/google/gmap.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

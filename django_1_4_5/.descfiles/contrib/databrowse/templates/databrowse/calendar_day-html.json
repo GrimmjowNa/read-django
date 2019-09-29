@@ -1,0 +1,9 @@
+{
+    "source": "contrib/databrowse/templates/databrowse/calendar_day.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

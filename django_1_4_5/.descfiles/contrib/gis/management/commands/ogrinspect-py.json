@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/management/commands/ogrinspect.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

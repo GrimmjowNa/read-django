@@ -1,0 +1,9 @@
+{
+    "source": "contrib/staticfiles/management/commands/findstatic.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

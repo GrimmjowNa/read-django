@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/search_form.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

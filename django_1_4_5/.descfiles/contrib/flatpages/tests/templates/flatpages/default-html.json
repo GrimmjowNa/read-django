@@ -1,0 +1,9 @@
+{
+    "source": "contrib/flatpages/tests/templates/flatpages/default.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

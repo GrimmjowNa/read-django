@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/templates/gis/sitemaps/geo_sitemap.xml",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

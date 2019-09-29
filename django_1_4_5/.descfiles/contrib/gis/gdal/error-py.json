@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/gdal/error.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

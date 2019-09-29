@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/auth/user/add_form.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

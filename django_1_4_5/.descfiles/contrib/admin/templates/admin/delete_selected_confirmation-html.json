@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/delete_selected_confirmation.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/base/adapter.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

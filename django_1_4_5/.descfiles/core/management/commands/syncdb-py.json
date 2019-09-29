@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/syncdb.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

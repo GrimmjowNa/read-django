@@ -1,0 +1,9 @@
+{
+    "source": "contrib/flatpages/templatetags/flatpages.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

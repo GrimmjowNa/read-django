@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/showmigrations.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

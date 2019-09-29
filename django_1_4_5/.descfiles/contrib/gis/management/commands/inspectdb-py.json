@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/management/commands/inspectdb.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

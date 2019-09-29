@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/date_hierarchy.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

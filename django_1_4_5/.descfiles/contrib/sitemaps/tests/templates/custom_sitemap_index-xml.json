@@ -1,0 +1,9 @@
+{
+    "source": "contrib/sitemaps/tests/templates/custom_sitemap_index.xml",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

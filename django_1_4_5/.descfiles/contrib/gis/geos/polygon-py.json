@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/geos/polygon.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

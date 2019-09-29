@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/check.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

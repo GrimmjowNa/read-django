@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/fixtures/context-processors-users.xml",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

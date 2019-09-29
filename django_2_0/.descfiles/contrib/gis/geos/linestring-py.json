@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/geos/linestring.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/management/commands/createsuperuser.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/templates/gis/admin/openlayers.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

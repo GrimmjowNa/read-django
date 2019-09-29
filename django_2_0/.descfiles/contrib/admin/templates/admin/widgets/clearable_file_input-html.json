@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/widgets/clearable_file_input.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

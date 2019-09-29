@@ -1,0 +1,9 @@
+{
+    "source": "contrib/databrowse/templates/databrowse/fieldchoice_list.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

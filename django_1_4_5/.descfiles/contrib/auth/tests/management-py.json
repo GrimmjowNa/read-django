@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/management.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

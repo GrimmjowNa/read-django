@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlindexes.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

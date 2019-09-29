@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/templates/gis/google/google-map.js",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

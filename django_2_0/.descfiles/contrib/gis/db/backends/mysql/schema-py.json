@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/mysql/schema.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

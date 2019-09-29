@@ -1,0 +1,9 @@
+{
+    "source": "forms/templates/django/forms/widgets/checkbox_option.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

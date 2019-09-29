@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/prepopulated_fields_js.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/oracle/compiler.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

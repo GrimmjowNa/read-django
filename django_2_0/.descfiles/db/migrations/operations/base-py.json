@@ -1,0 +1,9 @@
+{
+    "source": "db/migrations/operations/base.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

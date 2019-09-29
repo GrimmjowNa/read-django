@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/templates/registration/logged_out.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

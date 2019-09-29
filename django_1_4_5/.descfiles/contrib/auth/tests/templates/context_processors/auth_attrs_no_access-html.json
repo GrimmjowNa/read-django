@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/templates/context_processors/auth_attrs_no_access.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

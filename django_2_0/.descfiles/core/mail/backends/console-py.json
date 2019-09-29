@@ -1,0 +1,9 @@
+{
+    "source": "core/mail/backends/console.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

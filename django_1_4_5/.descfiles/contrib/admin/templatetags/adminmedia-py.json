@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templatetags/adminmedia.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

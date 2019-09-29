@@ -1,0 +1,9 @@
+{
+    "source": "contrib/comments/templates/comments/delete.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

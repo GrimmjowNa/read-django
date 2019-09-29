@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/migrations/0005_alter_user_last_login_null.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

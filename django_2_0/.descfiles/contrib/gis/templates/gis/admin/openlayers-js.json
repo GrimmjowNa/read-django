@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/templates/gis/admin/openlayers.js",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/mysql/compiler.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

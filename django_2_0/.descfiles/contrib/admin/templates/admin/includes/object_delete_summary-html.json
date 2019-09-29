@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/includes/object_delete_summary.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

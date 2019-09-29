@@ -1,0 +1,9 @@
+{
+    "source": "contrib/contenttypes/management/commands/remove_stale_contenttypes.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

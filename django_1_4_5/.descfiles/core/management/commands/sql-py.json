@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sql.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

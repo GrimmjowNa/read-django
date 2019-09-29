@@ -1,0 +1,9 @@
+{
+    "source": "bin/django-admin.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

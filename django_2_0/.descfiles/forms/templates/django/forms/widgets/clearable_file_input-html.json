@@ -1,0 +1,9 @@
+{
+    "source": "forms/templates/django/forms/widgets/clearable_file_input.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

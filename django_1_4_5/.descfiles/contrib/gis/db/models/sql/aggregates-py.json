@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/models/sql/aggregates.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

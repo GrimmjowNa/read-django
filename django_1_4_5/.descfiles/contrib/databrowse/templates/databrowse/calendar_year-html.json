@@ -1,0 +1,9 @@
+{
+    "source": "contrib/databrowse/templates/databrowse/calendar_year.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

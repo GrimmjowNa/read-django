@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/tests/data/test_poly/test_poly.shp",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

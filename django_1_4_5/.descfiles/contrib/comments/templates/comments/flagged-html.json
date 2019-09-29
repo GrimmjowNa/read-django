@@ -1,0 +1,9 @@
+{
+    "source": "contrib/comments/templates/comments/flagged.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

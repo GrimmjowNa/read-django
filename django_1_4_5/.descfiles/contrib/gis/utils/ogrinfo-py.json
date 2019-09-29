@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/utils/ogrinfo.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

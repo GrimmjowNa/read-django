@@ -1,0 +1,9 @@
+{
+    "source": "contrib/flatpages/tests/templates/registration/login.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

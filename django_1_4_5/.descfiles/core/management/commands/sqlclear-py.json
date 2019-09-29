@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlclear.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

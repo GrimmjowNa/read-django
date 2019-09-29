@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/db/backends/oracle/models.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

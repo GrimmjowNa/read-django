@@ -1,0 +1,9 @@
+{
+    "source": "forms/templates/django/forms/widgets/text.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

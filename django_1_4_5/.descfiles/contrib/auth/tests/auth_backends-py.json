@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/auth_backends.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

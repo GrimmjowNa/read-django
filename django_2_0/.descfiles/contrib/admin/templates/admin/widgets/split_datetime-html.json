@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/widgets/split_datetime.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

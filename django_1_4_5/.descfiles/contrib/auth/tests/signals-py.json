@@ -1,0 +1,9 @@
+{
+    "source": "contrib/auth/tests/signals.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}
