@@ -4,6 +4,10 @@
     "requirement": [
     ],
     "descs": {
-
+        "safe_join": [
+            "传入一个或多个路径名, 返回一个绝对路径, 生成的路径必须在base路径下",
+            "如果执行 safe_join('static', '../js')",
+            "将会抛出 ValueError"
+        ]
     }
 }
