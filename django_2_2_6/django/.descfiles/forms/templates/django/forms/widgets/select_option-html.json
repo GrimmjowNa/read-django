@@ -1,0 +1,9 @@
+{
+    "source": "forms/templates/django/forms/widgets/select_option.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

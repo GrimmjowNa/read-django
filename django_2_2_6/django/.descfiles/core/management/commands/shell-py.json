@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/shell.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

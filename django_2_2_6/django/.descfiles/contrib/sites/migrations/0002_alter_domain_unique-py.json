@@ -1,0 +1,9 @@
+{
+    "source": "contrib/sites/migrations/0002_alter_domain_unique.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

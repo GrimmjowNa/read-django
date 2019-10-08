@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/gdal/raster/source.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/gis/templates/gis/kml/base.kml",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

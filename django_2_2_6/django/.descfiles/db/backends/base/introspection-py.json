@@ -1,0 +1,9 @@
+{
+    "source": "db/backends/base/introspection.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/base.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

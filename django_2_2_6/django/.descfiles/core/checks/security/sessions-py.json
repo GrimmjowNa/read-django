@@ -1,0 +1,9 @@
+{
+    "source": "core/checks/security/sessions.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

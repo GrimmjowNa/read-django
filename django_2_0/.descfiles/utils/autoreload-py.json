@@ -1,9 +1,42 @@
 {
     "source": "utils/autoreload.py",
-    "introduction": "",
+    "introduction": [
+        "主要用于开发者模式启动服务， python manage.py runserver 代码改变时自动重新启动程序"
+    ],
     "requirement": [
     ],
     "descs": {
-
+        "code_changed" : [
+            "通过 os.stat(filename).st_mtime 存在全局变量_mtimes中",
+            "检测到文件修改后，重置_mtimes， 并返回True",
+            "sys.modules 全局字典，该字典是python启动后就加载在内存中。",
+            "每当程序员导入新的模块，sys.modules将自动记录该模块。",
+            "当第二次再导入该模块时，python会直接到字典中查找，从而加快了程序运行的速度。"
+        ],
+        "inotify_code_changed": [
+            "监听代码文件改动"
+        ],
+        "reloader_thread": [
+            "inotify可用则使用监听文件变化的方式",
+            "否则, 保存相关文件的修改时间, 定期遍历检查是否有文件改动",
+            "国际化文件修改, 加载国际化",
+            "代码文件修改, 退出线程, 返回3",
+            "主进程接收到exit_code为3,重新开启一个子进程"
+        ],
+        "pyinotify": [
+            "它依赖于linux 内核的inotify,是事件驱动的。",
+            "注册需要监控的文件和事件，然后指定事件处理函数，那么在指定事件发生时，会自动调用事件处理函数。",
+            {
+                "用法": [
+                    "创建WatchManager  wm = pyinotify.WatchManager()",
+                    "创建继承自pyinotify.ProcessEvent的类EventHandler，覆盖process_xxx方法，在其中编写处理事件的代码。",
+                    "process_xxx中xxx为你设置的添加事件,如IN_OPEN，IN_CLOSE_NOWRITE,IN_MODIFY等",
+                    "调用创建的WatchManager的add_watch(文件路径， 要监听的事件)",
+                    "wm.add_watch('/tmp/log/1.log',pyinotify.IN_MODIFY)",
+                    "notifier = pyinotify.Notifier(wm) notifier实例化",
+                    "notifier.loop() 进入事件循环"
+                ]
+            }
+        ]
     }
 }

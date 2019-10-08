@@ -1,0 +1,9 @@
+{
+    "source": "db/backends/sqlite3/operations.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

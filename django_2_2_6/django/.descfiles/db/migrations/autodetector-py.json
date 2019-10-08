@@ -1,0 +1,9 @@
+{
+    "source": "db/migrations/autodetector.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

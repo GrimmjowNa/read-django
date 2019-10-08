@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/change_form_object_tools.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

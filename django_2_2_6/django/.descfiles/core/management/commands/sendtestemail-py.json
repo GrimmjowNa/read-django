@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sendtestemail.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "core/mail/backends/locmem.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

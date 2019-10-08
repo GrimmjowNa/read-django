@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/squashmigrations.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

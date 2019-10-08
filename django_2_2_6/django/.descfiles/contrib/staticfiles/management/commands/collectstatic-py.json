@@ -1,0 +1,9 @@
+{
+    "source": "contrib/staticfiles/management/commands/collectstatic.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

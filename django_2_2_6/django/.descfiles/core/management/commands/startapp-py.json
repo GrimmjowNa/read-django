@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/startapp.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

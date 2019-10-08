@@ -1,0 +1,9 @@
+{
+    "source": "db/backends/sqlite3/schema.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/edit_inline/stacked.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

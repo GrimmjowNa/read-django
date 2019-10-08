@@ -1,0 +1,9 @@
+{
+    "source": "forms/templates/django/forms/widgets/hidden.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

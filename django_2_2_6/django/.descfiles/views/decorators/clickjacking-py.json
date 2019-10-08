@@ -1,0 +1,9 @@
+{
+    "source": "views/decorators/clickjacking.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

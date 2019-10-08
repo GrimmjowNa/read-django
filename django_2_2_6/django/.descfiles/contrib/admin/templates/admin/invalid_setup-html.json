@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admin/templates/admin/invalid_setup.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

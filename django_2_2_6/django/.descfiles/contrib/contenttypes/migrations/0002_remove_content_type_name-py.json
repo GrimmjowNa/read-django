@@ -1,0 +1,9 @@
+{
+    "source": "contrib/contenttypes/migrations/0002_remove_content_type_name.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/loaddata.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

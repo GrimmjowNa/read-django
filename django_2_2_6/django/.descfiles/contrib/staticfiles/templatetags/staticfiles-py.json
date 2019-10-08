@@ -1,0 +1,9 @@
+{
+    "source": "contrib/staticfiles/templatetags/staticfiles.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

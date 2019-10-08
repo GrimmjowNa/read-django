@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/startproject.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

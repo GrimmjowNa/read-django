@@ -1,0 +1,9 @@
+{
+    "source": "contrib/postgres/jinja2/postgres/widgets/split_array.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

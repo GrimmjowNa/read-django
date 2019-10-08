@@ -1,0 +1,9 @@
+{
+    "source": "contrib/admindocs/templates/admin_doc/template_tag_index.html",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

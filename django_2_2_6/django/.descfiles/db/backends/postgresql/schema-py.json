@@ -1,0 +1,9 @@
+{
+    "source": "db/backends/postgresql/schema.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

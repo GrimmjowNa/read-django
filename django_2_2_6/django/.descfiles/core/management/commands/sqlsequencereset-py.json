@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/sqlsequencereset.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/postgres/aggregates/general.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

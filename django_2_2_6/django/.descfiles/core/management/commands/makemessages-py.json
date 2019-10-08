@@ -1,0 +1,9 @@
+{
+    "source": "core/management/commands/makemessages.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "source": "contrib/postgres/aggregates/mixins.py",
+    "introduction": "",
+    "requirement": [
+    ],
+    "descs": {
+
+    }
+}
